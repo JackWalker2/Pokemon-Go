@@ -29,26 +29,36 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         manager.delegate = self
         
         if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
-            mapView.delegate = self
-            mapView.showsUserLocation = true
-            manager.startUpdatingLocation()
-            
-            Timer.scheduledTimer(withTimeInterval: 5, repeats: true, block: { (timer) in
-                // Spawn a Pokemon
-                if let coord = self.manager.location?.coordinate {
-                    let pokemon = self.pokemons[Int(arc4random_uniform(UInt32(self.pokemons.count)))]
-                    let anno = PokeAnnotation(coord: coord, pokemon: pokemon)
-                    let randLat = (Double(arc4random_uniform(200)) - 100.0) / 60000.0
-                    let randLon = (Double(arc4random_uniform(200)) - 100.0) / 60000.0
-                    anno.coordinate.latitude += randLat
-                    anno.coordinate.longitude += randLon
-                    self.mapView.addAnnotation(anno)
-                }
-            })
-            
+           setup()
         } else {
         manager.requestWhenInUseAuthorization()
         }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == .authorizedWhenInUse {
+            setup()
+        }
+    }
+    
+    func setup() {
+        mapView.delegate = self
+        mapView.showsUserLocation = true
+        manager.startUpdatingLocation()
+        
+        Timer.scheduledTimer(withTimeInterval: 5, repeats: true, block: { (timer) in
+            // Spawn a Pokemon
+            if let coord = self.manager.location?.coordinate {
+                let pokemon = self.pokemons[Int(arc4random_uniform(UInt32(self.pokemons.count)))]
+                let anno = PokeAnnotation(coord: coord, pokemon: pokemon)
+                let randLat = (Double(arc4random_uniform(200)) - 100.0) / 60000.0
+                let randLon = (Double(arc4random_uniform(200)) - 100.0) / 60000.0
+                anno.coordinate.latitude += randLat
+                anno.coordinate.longitude += randLon
+                self.mapView.addAnnotation(anno)
+            }
+        })
+
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
