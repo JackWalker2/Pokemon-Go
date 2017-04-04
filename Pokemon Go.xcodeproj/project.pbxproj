@@ -16,6 +16,7 @@
 		D157F6161E933DE100B8BCC0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D157F6151E933DE100B8BCC0 /* MapKit.framework */; };
 		D157F6181E93505A00B8BCC0 /* PokeDexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D157F6171E93505A00B8BCC0 /* PokeDexViewController.swift */; };
 		D157F61A1E93697F00B8BCC0 /* CoreDateHelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D157F6191E93697F00B8BCC0 /* CoreDateHelp.swift */; };
+		D157F61C1E937C5200B8BCC0 /* PokemonAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D157F61B1E937C5200B8BCC0 /* PokemonAnnotation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		D157F6151E933DE100B8BCC0 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		D157F6171E93505A00B8BCC0 /* PokeDexViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeDexViewController.swift; sourceTree = "<group>"; };
 		D157F6191E93697F00B8BCC0 /* CoreDateHelp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDateHelp.swift; sourceTree = "<group>"; };
+		D157F61B1E937C5200B8BCC0 /* PokemonAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonAnnotation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				D157F6011E933C2900B8BCC0 /* ViewController.swift */,
 				D157F6171E93505A00B8BCC0 /* PokeDexViewController.swift */,
 				D157F6191E93697F00B8BCC0 /* CoreDateHelp.swift */,
+				D157F61B1E937C5200B8BCC0 /* PokemonAnnotation.swift */,
 				D157F6031E933C2900B8BCC0 /* Main.storyboard */,
 				D157F6091E933C2900B8BCC0 /* Assets.xcassets */,
 				D157F60B1E933C2900B8BCC0 /* LaunchScreen.storyboard */,
@@ -161,6 +164,7 @@
 				D157F61A1E93697F00B8BCC0 /* CoreDateHelp.swift in Sources */,
 				D157F6181E93505A00B8BCC0 /* PokeDexViewController.swift in Sources */,
 				D157F6001E933C2900B8BCC0 /* AppDelegate.swift in Sources */,
+				D157F61C1E937C5200B8BCC0 /* PokemonAnnotation.swift in Sources */,
 				D157F6081E933C2900B8BCC0 /* Pokemon_Go.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
