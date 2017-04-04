@@ -13,6 +13,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
     
+    var updateCount = 0
+    
     var manager = CLLocationManager()
     
 
@@ -25,8 +27,17 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
             print("Ready to Go!")
             mapView.showsUserLocation = true
+            manager.startUpdatingLocation()
         } else {
         manager.requestWhenInUseAuthorization()
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if updateCount < 3 {
+            let region = MKCoordinateRegionMakeWithDistance(manager.location!.coordinate, 1000, 1000)
+            mapView.setRegion(region, animated: false)
+            updateCount += 1
         }
     }
 
