@@ -104,14 +104,27 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         
         Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { (timer) in
             if let coord = self.manager.location?.coordinate {
+                let pokemon = (view.annotation as! PokeAnnotation).pokemon
                 if MKMapRectContainsPoint(mapView.visibleMapRect, MKMapPointForCoordinate(coord)) {
-                    print("Catch")
                     
-                    let pokemon = (view.annotation as! PokeAnnotation).pokemon
                     pokemon.caught = true
                     (UIApplication.shared.delegate as! AppDelegate).saveContext()
+                    
+                    mapView.removeAnnotation(view.annotation!)
+                    
+                    let alertVC = UIAlertController(title: "Congrats!", message: "You have caught \(String(describing: pokemon.name!))!", preferredStyle: .alert)
+                    
+                    let Pokeaction = UIAlertAction(title: "PokeDex", style: .default, handler: { (action) in self.performSegue(withIdentifier: "pokedexSegue", sender: nil)})
+                    alertVC.addAction(Pokeaction)
+                    
+                    let OKaction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                    alertVC.addAction(OKaction)
+                    self.present(alertVC, animated: true, completion: nil)
                 } else {
-                    print("Poke Too Far AWAY")
+                    let alertVC = UIAlertController(title: "Uh-Oh!", message: "You are too far away to catch \(String(describing: pokemon.name!))!", preferredStyle: .alert)
+                    let OKaction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                    alertVC.addAction(OKaction)
+                    self.present(alertVC, animated: true, completion: nil)
                 }
             }
         }
