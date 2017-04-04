@@ -120,6 +120,7 @@
 				TargetAttributes = {
 					D157F5FB1E933C2900B8BCC0 = {
 						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = 3DX3TQP475;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -288,7 +289,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3DX3TQP475;
 				INFOPLIST_FILE = "Pokemon Go/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.JackWalker.Pokemon-Go";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -300,7 +303,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3DX3TQP475;
 				INFOPLIST_FILE = "Pokemon Go/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.JackWalker.Pokemon-Go";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -327,6 +332,7 @@
 				D157F6131E933C2900B8BCC0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
