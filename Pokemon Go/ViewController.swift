@@ -17,12 +17,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     var manager = CLLocationManager()
     
+    var pokemons : [Pokemon] = []
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        addAllPokemon()
+        pokemons = getAllPokemon()
         
         manager.delegate = self
         
