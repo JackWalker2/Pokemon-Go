@@ -56,6 +56,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
                 anno.coordinate.latitude += randLat
                 anno.coordinate.longitude += randLon
                 self.mapView.addAnnotation(anno)
+                Timer.scheduledTimer(withTimeInterval: 8, repeats: false, block: { (timer) in
+                    self.mapView.removeAnnotation(anno)
+                })
             }
         })
 

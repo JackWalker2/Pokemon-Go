@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D1469C4D1E9510D800667E89 /* PokeInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1469C4C1E9510D800667E89 /* PokeInfoViewController.swift */; };
 		D157F6001E933C2900B8BCC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D157F5FF1E933C2900B8BCC0 /* AppDelegate.swift */; };
 		D157F6021E933C2900B8BCC0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D157F6011E933C2900B8BCC0 /* ViewController.swift */; };
 		D157F6051E933C2900B8BCC0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D157F6031E933C2900B8BCC0 /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D1469C4C1E9510D800667E89 /* PokeInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeInfoViewController.swift; sourceTree = "<group>"; };
 		D157F5FC1E933C2900B8BCC0 /* Pokemon Go.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pokemon Go.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D157F5FF1E933C2900B8BCC0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D157F6011E933C2900B8BCC0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -72,8 +74,9 @@
 				D157F6191E93697F00B8BCC0 /* CoreDateHelp.swift */,
 				D157F61B1E937C5200B8BCC0 /* PokemonAnnotation.swift */,
 				D157F6031E933C2900B8BCC0 /* Main.storyboard */,
-				D157F6091E933C2900B8BCC0 /* Assets.xcassets */,
+				D1469C4C1E9510D800667E89 /* PokeInfoViewController.swift */,
 				D157F60B1E933C2900B8BCC0 /* LaunchScreen.storyboard */,
+				D157F6091E933C2900B8BCC0 /* Assets.xcassets */,
 				D157F60E1E933C2900B8BCC0 /* Info.plist */,
 				D157F6061E933C2900B8BCC0 /* Pokemon_Go.xcdatamodeld */,
 			);
@@ -161,6 +164,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1469C4D1E9510D800667E89 /* PokeInfoViewController.swift in Sources */,
 				D157F6021E933C2900B8BCC0 /* ViewController.swift in Sources */,
 				D157F61A1E93697F00B8BCC0 /* CoreDateHelp.swift in Sources */,
 				D157F6181E93505A00B8BCC0 /* PokeDexViewController.swift in Sources */,
