@@ -147,7 +147,7 @@ func addAllPokemon() {
     createPokemon(name: "Vapereon", imageName: "134")
     createPokemon(name: "Jolteon", imageName: "135")
     createPokemon(name: "Flareon", imageName: "136")
-    createPokemon(name: "Pygon", imageName: "137")
+    createPokemon(name: "Porygon", imageName: "137")
     createPokemon(name: "Omanyte", imageName: "138")
     createPokemon(name: "Omastar", imageName: "139")
     createPokemon(name: "Kabuto", imageName: "140")
@@ -203,6 +203,14 @@ func getAllCaughtPokemons() -> [Pokemon] {
     } catch {}
     return []
 }
+
+// Fetch Request to have sorted PokeDex
+/* 
+let fec:NSFetchRequest = YourEntity.fetchRequest()
+let sortDescriptor = NSSortDescriptor(key: "type", ascending ture)
+fec.sortDescriptors = [sortDescriptor]
+let items = try! context.fetch(fec)
+*/
 
 func getAllUncaughtPokemons() -> [Pokemon] {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext

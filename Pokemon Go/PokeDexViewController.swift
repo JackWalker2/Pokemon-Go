@@ -32,7 +32,7 @@ class PokeDexViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0 {
-            return "CAUGHT"
+            return "CAUGHT     \(caughtPokemons.count) / 151"
         } else {
             return "UNCAUGHT"
         }
