@@ -9,10 +9,23 @@
 import UIKit
 
 class PokeInfoViewController: UIViewController {
-
+    
+    @IBOutlet weak var PokeNameLabel: UILabel!
+    
+    @IBOutlet weak var PokeImage: UIImageView!
+    
+    var poke : Pokemon? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        PokeNameLabel.text = poke?.name
+        PokeImage.image = UIImage(named: String(describing: poke!.imageName!))
+        
+        /*PokeImage.image = UIImage(named: String(describing: poke?.imageName))
+        
+        GameImageView.image = UIImage(data: game!.image! as Data)*/
+        
         // Do any additional setup after loading the view.
     }
 

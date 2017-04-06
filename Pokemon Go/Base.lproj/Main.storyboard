@@ -65,6 +65,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="174" y="126"/>
         </scene>
         <!--Poke Dex View Controller-->
         <scene sceneID="aB3-hl-tiy">
@@ -106,6 +107,7 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="j8f-Ah-BpI" id="reC-I6-1Rb"/>
+                        <segue destination="Nxc-kQ-NBx" kind="show" identifier="SelectPokeSegue" id="UHH-Uh-b2F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="24K-hD-X2L" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -123,12 +125,37 @@
                     <view key="view" contentMode="scaleToFill" id="LAJ-gk-3GX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="POKEMON" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DzC-ZP-Kin">
+                                <rect key="frame" x="65.5" y="50" width="244.5" height="58.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="49"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8IX-T4-C1Z">
+                                <rect key="frame" x="62.5" y="158.5" width="250" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="TGU-q8-4zl"/>
+                                    <constraint firstAttribute="height" constant="250" id="w07-OL-ois"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="DzC-ZP-Kin" firstAttribute="top" secondItem="zw8-e2-MmL" secondAttribute="bottom" constant="30" id="70x-lR-NU4"/>
+                            <constraint firstItem="8IX-T4-C1Z" firstAttribute="top" secondItem="DzC-ZP-Kin" secondAttribute="bottom" constant="50" id="Are-FW-Ts7"/>
+                            <constraint firstItem="DzC-ZP-Kin" firstAttribute="centerX" secondItem="LAJ-gk-3GX" secondAttribute="centerX" id="cUu-yT-acg"/>
+                            <constraint firstItem="8IX-T4-C1Z" firstAttribute="centerX" secondItem="LAJ-gk-3GX" secondAttribute="centerX" id="hu6-TO-6AC"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="PokeImage" destination="8IX-T4-C1Z" id="1Vj-k4-Beb"/>
+                        <outlet property="PokeNameLabel" destination="DzC-ZP-Kin" id="svV-SJ-Cp1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fyf-m8-Nfb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1576" y="128"/>
+            <point key="canvasLocation" x="1613.5999999999999" y="125.4872563718141"/>
         </scene>
     </scenes>
     <resources>

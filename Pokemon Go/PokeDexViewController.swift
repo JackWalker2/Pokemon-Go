@@ -14,6 +14,7 @@ class PokeDexViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     var caughtPokemons : [Pokemon] = []
     var uncaughtPokemons : [Pokemon] = []
+    var Poke : [Pokemon] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +59,22 @@ class PokeDexViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell.textLabel?.text = pokemon.name
         cell.imageView?.image = UIImage(named: pokemon.imageName!)
         return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 0 {
+            let pokemon = caughtPokemons[indexPath.row]
+            self.performSegue(withIdentifier: "SelectPokeSegue", sender: pokemon)
+        } else {
+            let pokemon = uncaughtPokemons[indexPath.row]
+            self.performSegue(withIdentifier: "SelectPokeSegue", sender: pokemon)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "SelectPokeSegue" {
+            let nextVC = segue.destination as! PokeInfoViewController
+            nextVC.poke = sender as? Pokemon
+        }
     }
     
     @IBAction func mapTapped(_ sender: Any) {
