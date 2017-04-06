@@ -139,11 +139,24 @@
                                     <constraint firstAttribute="height" constant="250" id="w07-OL-ois"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bg3-Tn-7ga">
+                                <rect key="frame" x="149.5" y="552" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="mgc-NR-Wql"/>
+                                    <constraint firstAttribute="width" constant="75" id="pNc-Hq-VpS"/>
+                                </constraints>
+                                <state key="normal" image="pokedex"/>
+                                <connections>
+                                    <action selector="PokeDexTapped:" destination="Nxc-kQ-NBx" eventType="touchUpInside" id="qjW-qd-9U5"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.3888970933" green="0.72693136899999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="DzC-ZP-Kin" firstAttribute="top" secondItem="zw8-e2-MmL" secondAttribute="bottom" constant="30" id="70x-lR-NU4"/>
                             <constraint firstItem="8IX-T4-C1Z" firstAttribute="top" secondItem="DzC-ZP-Kin" secondAttribute="bottom" constant="50" id="Are-FW-Ts7"/>
+                            <constraint firstItem="bg3-Tn-7ga" firstAttribute="centerX" secondItem="LAJ-gk-3GX" secondAttribute="centerX" id="MRS-g9-0wh"/>
+                            <constraint firstItem="YPE-pM-wMM" firstAttribute="top" secondItem="bg3-Tn-7ga" secondAttribute="bottom" constant="40" id="Seg-Aw-xsf"/>
                             <constraint firstItem="DzC-ZP-Kin" firstAttribute="centerX" secondItem="LAJ-gk-3GX" secondAttribute="centerX" id="cUu-yT-acg"/>
                             <constraint firstItem="8IX-T4-C1Z" firstAttribute="centerX" secondItem="LAJ-gk-3GX" secondAttribute="centerX" id="hu6-TO-6AC"/>
                         </constraints>
@@ -162,5 +175,6 @@
         <image name="compass" width="512" height="512"/>
         <image name="map" width="512" height="512"/>
         <image name="pokeball" width="512" height="512"/>
+        <image name="pokedex" width="512" height="512"/>
     </resources>
 </document>
