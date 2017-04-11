@@ -9,6 +9,8 @@
 import UIKit
 import CoreData
 
+var poke : Pokemon? = nil
+
 func addAllPokemon() {
     
     createPokemon(name: "Bulbasaur", imageName: "001")
@@ -195,10 +197,12 @@ func getAllCaughtPokemons() -> [Pokemon] {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
     let fetchRequest = Pokemon.fetchRequest() as NSFetchRequest<Pokemon>
+    let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+    fetchRequest.sortDescriptors = [sortDescriptor]
     fetchRequest.predicate = NSPredicate(format: "caught == %@", true as CVarArg)
     
     do {
-        let pokemons = try context.fetch(fetchRequest) as [Pokemon]
+        let pokemons = try context.fetch(fetchRequest)
         return pokemons
     } catch {}
     return []
@@ -216,6 +220,8 @@ func getAllUncaughtPokemons() -> [Pokemon] {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     let fetchRequest = Pokemon.fetchRequest() as NSFetchRequest<Pokemon>
+    let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+    fetchRequest.sortDescriptors = [sortDescriptor]
     fetchRequest.predicate = NSPredicate(format: "caught == %@", false as CVarArg)
     
     do {
