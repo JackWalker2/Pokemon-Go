@@ -4,8 +4,9 @@
         <attribute name="caught" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="imageName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pokeNumber" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Pokemon" positionX="-63" positionY="-18" width="128" height="90"/>
+        <element name="Pokemon" positionX="-63" positionY="-18" width="128" height="105"/>
     </elements>
 </model>

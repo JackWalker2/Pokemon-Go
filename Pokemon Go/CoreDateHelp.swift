@@ -197,7 +197,7 @@ func getAllCaughtPokemons() -> [Pokemon] {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
     let fetchRequest = Pokemon.fetchRequest() as NSFetchRequest<Pokemon>
-    let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+    let sortDescriptor = NSSortDescriptor(key: "imageName", ascending: true)
     fetchRequest.sortDescriptors = [sortDescriptor]
     fetchRequest.predicate = NSPredicate(format: "caught == %@", true as CVarArg)
     
@@ -220,7 +220,7 @@ func getAllUncaughtPokemons() -> [Pokemon] {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     let fetchRequest = Pokemon.fetchRequest() as NSFetchRequest<Pokemon>
-    let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+    let sortDescriptor = NSSortDescriptor(key: "imageName", ascending: true)
     fetchRequest.sortDescriptors = [sortDescriptor]
     fetchRequest.predicate = NSPredicate(format: "caught == %@", false as CVarArg)
     
