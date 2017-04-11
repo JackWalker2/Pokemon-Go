@@ -56,7 +56,7 @@ class PokeDexViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
         
         let cell = UITableViewCell()
-        cell.textLabel?.text = pokemon.name
+        cell.textLabel?.text = "\(String(describing: pokemon.name!))     \(String(describing: pokemon.imageName!))"
         cell.imageView?.image = UIImage(named: pokemon.imageName!)
         return cell
     }
