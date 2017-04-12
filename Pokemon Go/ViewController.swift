@@ -32,11 +32,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
            setup()
         } else {
         manager.requestWhenInUseAuthorization()
-        }
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        if status == .authorizedWhenInUse {
             setup()
         }
     }

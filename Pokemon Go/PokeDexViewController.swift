@@ -54,9 +54,8 @@ class PokeDexViewController: UIViewController, UITableViewDelegate, UITableViewD
         } else {
             pokemon = uncaughtPokemons[indexPath.row]
         }
-        
         let cell = UITableViewCell()
-        cell.textLabel?.text = "\(String(describing: pokemon.name!))     \(String(describing: pokemon.imageName!))"
+        cell.textLabel?.text = "\(String(describing: pokemon.name!))     #\(String(describing: pokemon.imageName!))"
         cell.imageView?.image = UIImage(named: pokemon.imageName!)
         return cell
     }
@@ -64,9 +63,11 @@ class PokeDexViewController: UIViewController, UITableViewDelegate, UITableViewD
         if indexPath.section == 0 {
             let pokemon = caughtPokemons[indexPath.row]
             self.performSegue(withIdentifier: "SelectPokeSegue", sender: pokemon)
+            tableView.deselectRow(at: indexPath, animated: true)
         } else {
             let pokemon = uncaughtPokemons[indexPath.row]
             self.performSegue(withIdentifier: "SelectPokeSegue", sender: pokemon)
+            tableView.deselectRow(at: indexPath, animated: true)
         }
     }
     
