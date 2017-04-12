@@ -72,6 +72,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
             
             return annoView
         }
+        
         let annoView = MKAnnotationView(annotation: annotation, reuseIdentifier: nil)
         
         let pokemon = (annotation as! PokeAnnotation).pokemon
@@ -88,12 +89,34 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     }
     
     
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if updateCount < 5 {
-            let region = MKCoordinateRegionMakeWithDistance(manager.location!.coordinate, 250, 250)
-            mapView.setRegion(region, animated: false)
-            updateCount += 1
-        } else {
+        let region = MKCoordinateRegionMakeWithDistance(manager.location!.coordinate, 250, 250)
+        mapView.setRegion(region, animated: false)
+    }
+    
+    private var mapChangedFromUserInteraction = false
+    
+    private func mapViewRegionDidChangeFromUserInteraction() -> Bool {
+        let view = self.mapView.subviews[0]
+        if let gestureRecognizers = view.gestureRecognizers {
+            for recognizer in gestureRecognizers {
+                if recognizer.state == UIGestureRecognizerState.began || recognizer.state == UIGestureRecognizerState.ended {
+                    return true
+                }
+            }
+        }
+        return false
+    }
+    
+    func mapView(_ mapView: MKMapView, regionWillChangeAnimated animated: Bool) {
+        mapChangedFromUserInteraction = mapViewRegionDidChangeFromUserInteraction()
+        if mapChangedFromUserInteraction {
+            manager.stopUpdatingLocation()
+        }
+    }
+    func mapView(_ mapView: MKMapView, regionDidChangeAnimated: Bool) {
+        if mapChangedFromUserInteraction {
             manager.stopUpdatingLocation()
         }
     }
@@ -141,6 +164,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         if let coord = manager.location?.coordinate {
             let region = MKCoordinateRegionMakeWithDistance(coord, 250, 250)
             mapView.setRegion(region, animated: true)
+            manager.startUpdatingLocation()
         }
     }
     
